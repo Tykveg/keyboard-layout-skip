@@ -14,8 +14,9 @@ In order to install you need:
 Open cmd somewhere.
 ```
 git clone https://github.com/Tykveg/keyboard-layout-skip.git
+cd keyboard-layout-skip
 ```
-Or just download the source code and unpack somewhere.
+Or just download the source code, unpack it somewhere and then open console in `keyboard-layout-skip-main`.
 ```
 mkdir build
 cd build
