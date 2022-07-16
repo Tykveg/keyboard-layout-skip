@@ -96,16 +96,14 @@ void KeyboardLayoutSkipper()
 		}
 		std::cout << "Done reading skips.txt\n";
 		f.close();
-		if (skips_k < 1)
-		{
-			std::cout << "No skips found. Applying 0x04090409 (en_US) by default.\n";
-			skips[0] = (HKL)0x04090409;
-			skips_k = 1;
-		}
 	}
-	else
+	else if ((!f) || (skips_k < 1)) // but if (!f) then (skips_k < 1) is always true.
 	{
-		std::cout << "skips.txt not found. Applying 0x04090409 (en_US) by default.\n";
+		if (!f)
+			std::cout << "skips.txt not found. ";
+		else if (skips_k < 1)
+			std::cout << "No correct skips found. ";
+		std::cout << "Applying 0x04090409 (en_US) by default.\n";
 		skips[0] = (HKL)0x04090409;
 		skips_k = 1;
 	}
